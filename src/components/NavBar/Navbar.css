@@ -1,0 +1,55 @@
+.logo {
+  padding: 20px;
+  font-size: 50px;
+  font-family: "Josefin Sans";
+  font-weight: bold;
+}
+span {
+  color: var(--color1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: white;
+}
+
+.logup {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.login {
+  color: var(--color1);
+  font-weight: bold;
+  font-family: var(--font1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login:hover {
+  transition: all 0.3s ease;
+  color: #de5b5e;
+}
+
+.singup {
+  background-color: var(--color1);
+  border-radius: 28px;
+  border: 1px solid var(--color1);
+  cursor: pointer;
+  color: #ffffff;
+  font-family: var(--font1);
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px var(--color1);
+  transition: all 0.3s;
+}
+
+.singup:hover {
+  transition: all 0.3s;
+  background-color: #de5b5e;
+}
