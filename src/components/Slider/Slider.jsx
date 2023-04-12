@@ -20,7 +20,10 @@ export default function Slider({ images }) {
   };
   return (
     <div className={styles.container}>
-      <FaLessThan onClick={handlerPreviousImg} />
+      <FaLessThan
+        className={styles.sliderIconLess}
+        onClick={handlerPreviousImg}
+      />
       {images.map((item, index) => {
         return (
           <div key={index}>
@@ -30,7 +33,10 @@ export default function Slider({ images }) {
           </div>
         );
       })}
-      <FaGreaterThan onClick={handlerNextImg} />
+      <FaGreaterThan
+        className={styles.sliderIconGreater}
+        onClick={handlerNextImg}
+      />
     </div>
   );
 }

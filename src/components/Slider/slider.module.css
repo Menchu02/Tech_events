@@ -5,8 +5,27 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
+  object-position: center;
 }
 .imgSlider {
-  width: 400px;
-  height: 270px;
+  width: 100vw;
+  height: 60vh;
+  overflow: hidden;
+  object-fit: cover;
+}
+.sliderIconLess {
+  position: absolute;
+  top: 250px;
+  left: 60px;
+  color: white;
+  font-size: 40px;
+}
+.sliderIconGreater {
+  position: absolute;
+  bottom: 290px;
+  right: 60px;
+  color: white;
+  width: 50px;
+  font-size: 40px;
 }

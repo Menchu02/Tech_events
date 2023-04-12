@@ -10,9 +10,9 @@ import Footer from './components/Footer/Footer';
 
 function App() {
   const imgSlider = [
-    'https://static.nationalgeographic.es/files/styles/image_3200/public/kids-gardening.jpg?w=1900&h=1371',
-    'https://xuanlanyoga.com/wp-content/uploads/2017/10/festival-de-yoga.jpg',
-    'https://isdicoders.com/wp-content/uploads/2022/04/Foto3.jpg',
+    'https://cnnespanol.cnn.com/wp-content/uploads/2022/02/jardineria-consejos-principiantes.jpg?quality=100&strip=info',
+    'https://media.thebostoncalendar.com/images/q_auto,fl_lossy/v1653592932/zxjdayzo1zkmo1ewzgjf/outdoor-yoga-in-cambridge--36.jpg',
+    'https://isdicoders.com/wp-content/uploads/2022/03/daw-dam-asir-asix-o-hacer-un-coding-bootcamp-1-scaled.jpeg',
   ];
   return (
     <div className='App'>
