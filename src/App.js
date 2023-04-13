@@ -7,6 +7,7 @@ import UpComing_events from "./components/UpComing_events/UpComing_events";
 import Past_events from "./components/Past_events/Past_events";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter } from "react-router-dom";
+import EventDetail from "./components/EventDetail/EventDetail";
 // import imgSlider from '../../img';
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <Slider images={imgSlider} />
-        <SerchBar />
-        <Highlight_events />
+        <EventDetail />
+        {/* <Slider images={imgSlider} /> */}
+        {/* <SerchBar /> */}
+        {/* <Highlight_events />
         <UpComing_events />
-        <Past_events />
+        <Past_events /> */}
         <Footer />
       </BrowserRouter>
     </div>
