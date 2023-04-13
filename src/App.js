@@ -6,6 +6,7 @@ import Highlight_events from './components/Highlight_events/Highlight_events';
 import UpComing_events from './components/UpComing_events/UpComing_events';
 import Past_events from './components/Past_events/Past_events';
 import Footer from './components/Footer/Footer';
+import EventCard from './components/EventCard/EventCard';
 // import imgSlider from '../../img';
 
 function App() {
@@ -17,12 +18,15 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
+
       <Slider images={imgSlider} />
-      <SerchBar />
-      <Highlight_events />
       <UpComing_events />
-      <Past_events />
-      <Footer />
+      {/* <SerchBar /> */}
+      {/* <EventCard /> */}
+      {/* <Highlight_events /> */}
+
+      {/* <Past_events /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
