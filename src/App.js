@@ -16,8 +16,8 @@ function App() {
     "https://isdicoders.com/wp-content/uploads/2022/03/daw-dam-asir-asix-o-hacer-un-coding-bootcamp-1-scaled.jpeg",
   ];
   return (
-    <BrowserRouter>
-      <div className="App">
+    <div className="App">
+      <BrowserRouter>
         <Navbar />
         <Slider images={imgSlider} />
         <SerchBar />
@@ -25,8 +25,8 @@ function App() {
         <UpComing_events />
         <Past_events />
         <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 
