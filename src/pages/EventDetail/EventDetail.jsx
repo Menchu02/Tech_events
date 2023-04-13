@@ -1,22 +1,32 @@
-import React from "react";
-import Slider from "../Slider/Slider";
+import React, { useEffect, useState } from "react";
+import Slider from "../../components/Slider/Slider";
 import styles from "./EventDetail.module.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import eventiaServices from "../../apiService/eventsServices";
 
 function EventDetail() {
   const img = [
     "https://images.pexels.com/photos/7776215/pexels-photo-7776215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   ];
+
+  const { id } = useParams();
+  const [eventDetail, setEventDetail] = useState({});
+  useEffect(() => {
+    eventiaServices.getEventById(id).then((data) => {
+      setEventDetail(data);
+    });
+  }, []);
+
   return (
     <div>
       <div className={styles.container}>
         <img className={styles.eventimg} src={img} alt="image" />
         <div className={styles.text}>
-          <h1 className={styles.title}>Title of event</h1>
-          <h1 className={styles.by}>By Name</h1>
-          <h1 className={styles.direction}>Direction</h1>
+          <h1 className={styles.title}>{eventDetail.name}</h1>
+          <h1 className={styles.by}>By {eventDetail.organitzer}</h1>
+          <h1 className={styles.direction}>{eventDetail.location}</h1>
           <Link to>
             <h1 className={styles.lookonmap}>
               <FaMapMarkerAlt />
@@ -31,14 +41,11 @@ function EventDetail() {
         </button>
       </div>
       <h1 className={styles.titles}>Description</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-        tempora impedit ex officiis iure consequuntur nisi minus iusto voluptate
-        exercitationem voluptates esse, reiciendis iste deserunt? Praesentium
-        ullam nam ipsa at?
-      </p>
+      <p>{eventDetail.description}</p>
       <h1 className={styles.titles}>Date & Time</h1>
-      <p>Day, Month day, year at hour </p>
+      <p>
+        {eventDetail.eventDate} at {eventDetail.eventHour}
+      </p>
       <Link>
         <h1 className={styles.links}> Add to calendar </h1>
       </Link>

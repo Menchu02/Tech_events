@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import EventCard from '../EventCard/EventCard';
-import styles from './upComingEvents.module.css';
-import eventiaServices from '../../apiService/eventsServices';
+import React, { useEffect, useState } from "react";
+import EventCard from "../EventCard/EventCard";
+import styles from "./upComingEvents.module.css";
+import eventiaServices from "../../apiService/eventsServices";
 export default function UpComing_events() {
   const [events, setEvents] = useState([]);
 
