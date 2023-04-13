@@ -8,20 +8,18 @@
   width: 100%;
 }
 .logo {
+  color: var(--color1);
   padding: 20px;
   font-size: 50px;
   font-family: "Josefin Sans";
   font-weight: bold;
-}
-span {
-  color: var(--color1);
 }
 .nav_logo {
   font-family: var(--font1);
   font-weight: bold;
   margin: 15px;
   font-size: 50px;
-  color: black;
+  color: var(--color1);
 }
 .navbar_desk {
   display: flex;
@@ -70,9 +68,10 @@ span {
 }
 
 .nav_items a {
-  padding: 50px;
-  background-color: white;
-  color: black;
+  font-family: var(--font1);
+  padding: 30px;
+  background-color: var(--color1);
+  color: white;
   text-align: center;
   text-decoration: none;
   font-weight: 600;
@@ -82,6 +81,24 @@ span {
   transition: all 0.4s ease-in-out;
 }
 
+.media {
+  font-family: var(--font1);
+  padding: 50px;
+  background-color: var(--color1);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  font-size: 27px;
+  transition: all 0.4s ease-in-out;
+}
+
+.socialmedia {
+  display: flex;
+  gap: 2px;
+}
 .nav_items a:hover {
   transition: all 0.4s ease-in-out;
   color: rgb(85, 85, 85);
@@ -100,14 +117,14 @@ span {
     position: absolute;
     top: 76px;
     left: 0;
-    background: white;
+    background: var(--color1);
     display: flex;
     flex-direction: column;
     width: 100%;
     height: -webkit-fill-available;
     transform: translateX(-100%);
     transition: 0.3s ease all;
-    /* gap: 20px; */
+    align-items: center;
   }
   .nav_items.open {
     transform: translateX(0) !important;
@@ -121,7 +138,7 @@ span {
   .nav_toggle span {
     width: 30px;
     height: 4px;
-    background: black;
+    background: var(--color1);
     margin-bottom: 5px;
     border-radius: 2px;
     transform-origin: 5px 0px;
