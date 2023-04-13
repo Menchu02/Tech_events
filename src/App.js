@@ -22,7 +22,7 @@ function App() {
       <Slider images={imgSlider} />
       <UpComing_events />
       {/* <SerchBar /> */}
-      <EventCard />
+      {/* <EventCard /> */}
       {/* <Highlight_events /> */}
 
       {/* <Past_events /> */}

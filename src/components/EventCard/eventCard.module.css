@@ -1,3 +1,12 @@
+.patherContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 170px);
+  list-style: none;
+  gap: 10px 270px;
+
+  justify-items: center;
+  justify-content: center;
+}
 .eventCardContainer {
   margin-top: 15px;
   display: flex;
@@ -6,7 +15,7 @@
   justify-content: center;
   padding: 15px 0px;
 
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
 }
 .imgCardEvent {
   width: 300px;
@@ -39,7 +48,13 @@
   border-radius: 10px;
   width: 80px;
   color: whitesmoke;
+  font-weight: bold;
 }
 .titleEvent {
   font-weight: bold;
 }
+/* @media (min-width: 750px) {
+  .form {
+    padding: 70px 229px;
+  }
+} */
