@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./eventCard.module.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styles from './eventCard.module.css';
+import { Link } from 'react-router-dom';
 
 export default function EventCard({ item }) {
   return (
@@ -10,8 +10,8 @@ export default function EventCard({ item }) {
           <div className={styles.imgContainer}>
             <img
               className={styles.imgCardEvent}
-              src="https://codersera.com/blog/wp-content/uploads/2019/07/BLOG-23-L-3.jpg"
-              alt="img event"
+              src={item.img}
+              alt='img event'
             />
           </div>
           <div className={styles.bottomEventCard}>
