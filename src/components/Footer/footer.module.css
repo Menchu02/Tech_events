@@ -9,7 +9,7 @@
 }
 
 .events {
-  padding: 10px 10px 10px 20px;
+  padding: 10px 20px 10px 20px;
   display: flex;
   gap: 20px;
 }
@@ -24,6 +24,7 @@
 }
 
 .footer_left {
+  padding-left: 20px;
   font-size: 30px;
 }
 .footer_left h1 {
