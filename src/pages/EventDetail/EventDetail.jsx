@@ -22,7 +22,7 @@ function EventDetail() {
   return (
     <div>
       <div className={styles.container}>
-        <img className={styles.eventimg} src={img} alt="image" />
+        <img className={styles.eventimg} src={eventDetail.img} alt="image" />
         <div className={styles.text}>
           <h1 className={styles.title}>{eventDetail.name}</h1>
           <h1 className={styles.by}>By {eventDetail.organitzer}</h1>
