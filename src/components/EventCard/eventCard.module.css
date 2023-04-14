@@ -25,7 +25,7 @@
 .bottomEventCard {
   display: flex;
   flex-direction: row;
-
+  height: 115px;
   gap: 30px;
   border: 1px solid black;
   border-bottom-left-radius: 10px;

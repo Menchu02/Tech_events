@@ -1,8 +1,9 @@
 .galleryContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 170px);
+  grid-template-columns: repeat(auto-fit, 190px);
   list-style: none;
-  gap: 10px 270px;
+  gap: 55px 270px;
   justify-items: center;
   justify-content: center;
+  margin: 115px 0;
 }
