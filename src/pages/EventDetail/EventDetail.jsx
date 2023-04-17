@@ -50,16 +50,19 @@ function EventDetail() {
           <BsFillPersonFill /> 0/10
         </button>
       </div>
+
       <div className={styles.textContainer}>
         <h1 className={styles.titles}>Description</h1>
         <p>{eventDetail.description}</p>
-        <h1 className={styles.titles}>Date & Time</h1>
-        <p>
-          {eventDetail.eventDate} at {eventDetail.eventHour}
-        </p>
-        <Link>
-          <h1 className={styles.links}> Add to calendar </h1>
-        </Link>
+        <div>
+          <h1 className={styles.titles}>Date & Time</h1>
+          <p>
+            {eventDetail.eventDate} at {eventDetail.eventHour}
+          </p>
+          <Link>
+            <h1 className={styles.links}> Add to calendar </h1>
+          </Link>
+        </div>
       </div>
     </div>
   );
