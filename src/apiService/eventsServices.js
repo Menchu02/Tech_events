@@ -14,5 +14,11 @@ const eventiaServices = {
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
+  getHighlightEvents() {
+    return axios
+      .get(url + '/highlights')
+      .then((res) => res.data)
+      .catch((error) => console.error(error));
+  },
 };
 export default eventiaServices;
