@@ -7,3 +7,8 @@
   justify-content: center;
   margin: 115px 0;
 }
+.searchBarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
