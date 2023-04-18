@@ -26,5 +26,11 @@ const eventiaServices = {
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
+  getAvailable() {
+    return axios
+      .get(url + '/available')
+      .then((res) => res.data)
+      .catch((error) => console.error(error));
+  },
 };
 export default eventiaServices;

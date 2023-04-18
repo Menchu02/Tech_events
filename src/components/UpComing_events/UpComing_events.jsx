@@ -7,15 +7,11 @@ export default function UpComing_events() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    eventiaServices.getAllEvents().then((data) => setEvents(data));
+    eventiaServices.getAvailable().then((data) => setEvents(data));
   }, []);
 
   return (
     <>
-      {/* <div className={styles.searchBarContainer}>
-        <SearchBar />
-      </div> */}
-
       <h1 className={styles.titleUpComingEvents}>UpComing events</h1>
       <div className={styles.galleryContainer}>
         {events.map((item) => (
