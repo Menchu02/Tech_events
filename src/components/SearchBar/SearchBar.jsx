@@ -23,12 +23,6 @@ export default function SearchBar() {
             {item.name}
           </option>
         ))}
-        {/* <option value=''> Categories</option>
-        <option value='opcion1'>Bussines</option>
-        <option value='opcion2'>Cultural</option>
-        <option value='opcion3'>Educational</option>
-        <option value='opcion3'>Social</option>
-        <option value='opcion3'>Sports</option> */}
       </select>
       <button className={styles.anchorInput}>Location</button>
       <button className={styles.anchorInput}>Calendar</button>
