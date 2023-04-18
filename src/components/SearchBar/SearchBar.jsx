@@ -3,7 +3,7 @@ import styles from './searchBar.module.css';
 import eventiaCategories from '../../apiService/categoriesService';
 import { useEffect } from 'react';
 
-export default function SearchBar() {
+export default function SearchBar({ filterEventByName, searchBarByName }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -16,6 +16,8 @@ export default function SearchBar() {
         type='text'
         placeholder='  Search event'
         className={styles.searchInput}
+        onChange={filterEventByName}
+        value={searchBarByName}
       />
       <select name='categories' className={styles.selectInput}>
         {categories.map((item) => (

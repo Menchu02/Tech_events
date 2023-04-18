@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import eventiaServices from '../../apiService/eventsServices';
+import React from 'react';
+
 // import EventCard from '../EventCard/EventCard';
 import { Link } from 'react-router-dom';
 import styles from './pastEvents.module.css';
-export default function Past_events() {
-  const [notAvailable, setNotAvailable] = useState([]);
+export default function Past_events({ pastEvents }) {
+  // const [notAvailable, setNotAvailable] = useState([]);
 
-  useEffect(() => {
-    eventiaServices.getNotAvailable().then((data) => setNotAvailable(data));
-  }, []);
+  // useEffect(() => {
+  //   eventiaServices.getNotAvailable().then((data) => setNotAvailable(data));
+  // }, []);
 
   return (
     <>
       <h1 className={styles.titleHighlightEvents}>Past events</h1>
       <div className={styles.galleryContainer}>
-        {notAvailable.map((item) => (
-          <Link to={`/events/${item.id}`}>
-            <div className={styles.eventCardContainer} key={item.id}>
+        {pastEvents.map((item) => (
+          <Link key={item.id} to={`/events/${item.id}`}>
+            <div className={styles.eventCardContainer}>
               <div className={styles.imgContainer}>
                 <img
                   className={styles.imgCardEvent}
