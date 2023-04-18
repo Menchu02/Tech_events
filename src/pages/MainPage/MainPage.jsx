@@ -1,5 +1,6 @@
 import React from 'react';
 import Highlight_events from '../../components/Highlight_events/Highlight_events';
+import Past_events from '../../components/Past_events/Past_events';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Slider from '../../components/Slider/Slider';
 import UpComing_events from '../../components/UpComing_events/UpComing_events';
@@ -19,6 +20,7 @@ export default function MainPage() {
       </div>
       <Highlight_events />
       <UpComing_events />
+      <Past_events />
     </div>
   );
 }
