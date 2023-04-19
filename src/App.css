@@ -12,6 +12,7 @@
   list-style: none;
   font-style: normal;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 * a {
   color: black;

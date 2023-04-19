@@ -1,15 +1,19 @@
 .footer {
   font-family: var(--font1);
-  display: flex;
   background-color: var(--color1);
   color: white;
-  justify-content: space-between;
   align-items: center;
   padding: 4px;
 }
 
+.footerCont {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
 .events {
-  padding: 10px 10px 10px 20px;
+  padding: 10px 20px 10px 20px;
   display: flex;
   gap: 20px;
 }
@@ -24,6 +28,7 @@
 }
 
 .footer_left {
+  padding-left: 20px;
   font-size: 30px;
 }
 .footer_left h1 {
