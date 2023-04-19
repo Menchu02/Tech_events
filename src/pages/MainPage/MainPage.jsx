@@ -57,7 +57,7 @@ export default function MainPage() {
   return (
     <div>
       {/* <Slider slider={slider} /> */}
-      <Slider images={imgSlider} />
+      <Slider highlightEvents={highlightEvents} />
       <div className={styles.searchBarContainer}>
         <SearchBar
           filterEventByName={filterEventByName}

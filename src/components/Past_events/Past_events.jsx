@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import EventCard from '../EventCard/EventCard';
 import { Link } from 'react-router-dom';

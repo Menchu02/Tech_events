@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import styles from './slider.module.css';
 import { FaGreaterThan, FaLessThan } from 'react-icons/fa';
 
-export default function Slider({ images }) {
+export default function Slider({ highlightEvents }) {
   // estado comienza en posicion 0
   const [img, setImg] = useState(0);
 
   // variable con la longitud que contiene el array images
-  const totalQuantity = images?.length;
+  const totalQuantity = highlightEvents?.length;
 
-  if (!Array.isArray(images) || totalQuantity === 0) {
+  if (totalQuantity === 0) {
     return;
   }
 
@@ -30,11 +30,14 @@ export default function Slider({ images }) {
       />
 
       {/* mapeo la prop images */}
-      {images.map((item, index) => {
+      {highlightEvents.map((item, index) => {
         return (
-          <div key={index}>
+          <div key={item.id}>
             {img === index && (
-              <img className={styles.imgSlider} src={item} alt='imagen' />
+              <>
+                <img className={styles.imgSlider} src={item.img} alt='imagen' />
+                <p>{item.name}</p>
+              </>
             )}
           </div>
         );
