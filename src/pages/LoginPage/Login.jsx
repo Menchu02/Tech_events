@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { json, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import "./Login.css";
+import validateLoginForm from "../../components/validations/LoginFormValidation";
+import validatePass from "../../components/validations/PasswordValidation";
+import EmailValidation from "../../components/validations/EmailValidation";
 
 function Login() {
   const userModel = {
@@ -27,7 +30,7 @@ function Login() {
   return (
     <div id="login">
       <form id="formLogin" name="Form" onSubmit={validateLoginForm}>
-        <h1 className="titleWelcome">Welcome to Galactica</h1>
+        <h1 className="titleWelcome">Welcome to Eventia</h1>
 
         <div className="inputContainer">
           <input
@@ -35,7 +38,7 @@ function Login() {
             className="inputLogin"
             name="email"
             id="user-email"
-            onKeyUp={validateEmail}
+            onKeyUp={EmailValidation}
             onChange={handleOnChange}
           />
           <label htmlFor="labelLogin" className="labelLogin">

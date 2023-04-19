@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import EventDetail from "./pages/EventDetail/EventDetail";
 import EventCard from "./components/EventCard/EventCard";
 import MainPage from "./pages/MainPage/MainPage";
+import Login from "./pages/LoginPage/Login";
 
 // import imgSlider from '../../img';
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route element={<EventDetail />} path="/events/:id" />
           <Route element={<MainPage />} path="/" />
+          <Route element={<Login />} path="/login" />
         </Routes>
         <Footer />
       </div>
