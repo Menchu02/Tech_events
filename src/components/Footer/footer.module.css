@@ -1,13 +1,17 @@
 .footer {
   font-family: var(--font1);
-  display: flex;
   background-color: var(--color1);
   color: white;
-  justify-content: space-between;
   align-items: center;
   padding: 4px;
 }
 
+.footerCont {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
 .events {
   padding: 10px 20px 10px 20px;
   display: flex;
