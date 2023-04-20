@@ -11,6 +11,7 @@ import EventDetail from "./pages/EventDetail/EventDetail";
 import EventCard from "./components/EventCard/EventCard";
 import MainPage from "./pages/MainPage/MainPage";
 import Login from "./pages/LoginPage/Login";
+import Register from "./pages/RegisterPage/Register";
 
 // import imgSlider from '../../img';
 
@@ -23,6 +24,7 @@ function App() {
           <Route element={<EventDetail />} path="/events/:id" />
           <Route element={<MainPage />} path="/" />
           <Route element={<Login />} path="/login" />
+          <Route element={<Register />} path="/register" />
         </Routes>
         <Footer />
       </div>

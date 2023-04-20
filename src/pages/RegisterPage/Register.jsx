@@ -1,37 +1,29 @@
 import React from "react";
-import { useState } from "react";
-import { Link, json, useNavigate } from "react-router-dom";
-import "./Login.css";
-import validateLoginForm from "../../components/validations/LoginFormValidation";
+import { Link } from "react-router-dom";
+import "../LoginPage/Login.css";
+import "./Register.module.css";
 import validatePass from "../../components/validations/PasswordValidation";
+import validateRegisterForm from "../../components/validations/RegisterFormValidation";
 import EmailValidation from "../../components/validations/EmailValidation";
 
-function Login() {
-  const userModel = {
-    email: "",
-    password: "",
-  };
-
-  const [user, setUser] = useState(userModel);
-  let navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem("login", JSON.stringify(user));
-    navigate("/");
-  };
-
-  const userItem = JSON.parse(localStorage.getItem("login"));
-  console.log(userItem);
-
-  const handleOnChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
-
+function Register() {
   return (
     <div id="login">
-      <form id="formLogin" name="Form" onSubmit={validateLoginForm}>
+      <form id="formLogin" name="Form" onSubmit={validateRegisterForm}>
         <h1 className="titleWelcome">Welcome to Eventia</h1>
+
+        <div className="inputContainer">
+          <input
+            type="text"
+            className="inputLogin"
+            name="name"
+            id="user-email"
+          />
+          <label htmlFor="labelLogin" className="labelLogin">
+            {" "}
+            Name{" "}
+          </label>
+        </div>
 
         <div className="inputContainer">
           <input
@@ -40,7 +32,6 @@ function Login() {
             name="email"
             id="user-email"
             onKeyUp={EmailValidation}
-            onChange={handleOnChange}
           />
           <label htmlFor="labelLogin" className="labelLogin">
             {" "}
@@ -55,7 +46,6 @@ function Login() {
             className="inputLogin"
             name="password"
             onKeyUp={validatePass}
-            onChange={handleOnChange}
             maxLength="30"
           />
           <label htmlFor="labelLogin" className="labelLogin">
@@ -66,20 +56,17 @@ function Login() {
         </div>
 
         <div className="containerButons">
-          <Link to={"/"}>
-            <input
-              type="submit"
-              className="submitButton"
-              value="Sign In"
-              onClick={handleSubmit}
-            />
-          </Link>
-
-          <h5 className="registerNow">
+          <input
+            type="submit"
+            className="submitButton"
+            value="Register"
+            onClick={EmailValidation}
+          />
+          <h5 className="loginNow">
             {" "}
-            Not a member yet?{" "}
-            <Link to={"/register"}>
-              <span>Register now</span>
+            Are you already a member?{" "}
+            <Link to={"/login"}>
+              <span>Login now</span>
             </Link>{" "}
           </h5>
         </div>
@@ -88,4 +75,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
