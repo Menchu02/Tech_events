@@ -68,7 +68,7 @@ export default function MainPage() {
           <UpComing_events upComingEvents={upComingEvents} />
 
           <Past_events pastEvents={pastEvents} />
-          <Admin />
+          {/* <Admin /> */}
         </div>
       )}
     </div>
