@@ -12,8 +12,12 @@ export default function NavBar() {
       <nav className="navbar_desk">
         <h1 className="logo">EVENTIA</h1>
         <div className="logup">
-          <h1 className="login">Login</h1>
-          <button className="singup">Sing Up</button>
+          <Link to={"/login"}>
+            <h1 className="login">Login</h1>
+          </Link>
+          <Link to={"/register"}>
+            <button className="singup">Sing Up</button>
+          </Link>
         </div>
       </nav>
       <div className="navbar">
