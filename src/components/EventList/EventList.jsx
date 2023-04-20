@@ -7,8 +7,8 @@ export default function EventList({ filteredEvents }) {
     <>
       <h1 className={styles.titleHighlightEvents}>Highlight events</h1>
       <div className={styles.galleryContainer}>
-        {filteredEvents.map((item) => (
-          <EventCard item={item} key={item.id} />
+        {filteredEvents.map((event) => (
+          <EventCard item={event} key={event.id} />
         ))}
       </div>
     </>

@@ -9,12 +9,6 @@ import styles from './main.module.css';
 import EventList from '../../components/EventList/EventList';
 
 export default function MainPage() {
-  const imgSlider = [
-    'https://cnnespanol.cnn.com/wp-content/uploads/2022/02/jardineria-consejos-principiantes.jpg?quality=100&strip=info',
-    'https://media.thebostoncalendar.com/images/q_auto,fl_lossy/v1653592932/zxjdayzo1zkmo1ewzgjf/outdoor-yoga-in-cambridge--36.jpg',
-    'https://isdicoders.com/wp-content/uploads/2022/03/daw-dam-asir-asix-o-hacer-un-coding-bootcamp-1-scaled.jpeg',
-  ];
-
   //ESTADOS EVENTOS
   const [highlightEvents, setHighLightEvents] = useState([]);
   const [upComingEvents, setUpComingEvents] = useState([]);
@@ -22,9 +16,6 @@ export default function MainPage() {
 
   // Agrega un estado para almacenar los eventos filtrados
   const [filteredEvents, setFilteredEvents] = useState([]);
-
-  // //ESTADO FILTRO POR NOMBRE
-  // const [searchBarByName, setSearchBarByName] = useState('');
 
   //LLAMADAS
   //DESTACADOS
@@ -56,7 +47,6 @@ export default function MainPage() {
 
   return (
     <div>
-      {/* <Slider slider={slider} /> */}
       <Slider highlightEvents={highlightEvents} />
       <div className={styles.searchBarContainer}>
         <SearchBar
