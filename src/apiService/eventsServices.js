@@ -14,9 +14,9 @@ const eventiaServices = {
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
-  getHighlightEvents() {
+  getHighlightEvents(name) {
     return axios
-      .get(url + '/highlights')
+      .get(url + `/highlights?name=${name}`)
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
@@ -28,7 +28,7 @@ const eventiaServices = {
   },
   getAvailable() {
     return axios
-      .get(url + '/available')
+      .get(url + '/available ')
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
