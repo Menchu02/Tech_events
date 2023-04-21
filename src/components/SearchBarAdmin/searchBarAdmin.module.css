@@ -1,0 +1,16 @@
+.searchInput {
+  border: solid 1px black;
+  width: 35rem;
+  height: 35px;
+  border-radius: 20px;
+}
+.searchBarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media (max-width: 500px) {
+  .searchInput {
+    width: 15rem;
+  }
+}

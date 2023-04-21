@@ -2,9 +2,9 @@ import axios from 'axios';
 const url = 'http://localhost:8080/events';
 
 const eventiaServices = {
-  getAllEvents() {
+  getAllEvents(name = '') {
     return axios
-      .get(url)
+      .get(url + `?name=${name}`)
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },

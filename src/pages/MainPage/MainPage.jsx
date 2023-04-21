@@ -6,6 +6,8 @@ import Slider from '../../components/Slider/Slider';
 import UpComing_events from '../../components/UpComing_events/UpComing_events';
 import eventiaServices from '../../apiService/eventsServices';
 import styles from './main.module.css';
+import EventList from '../../components/EventList/EventList';
+import Admin from '../../components/Admin/Admin';
 
 export default function MainPage() {
   //ESTADOS EVENTOS
@@ -39,7 +41,6 @@ export default function MainPage() {
   //FUNCIÓN FILTRO POR NOMBRE
   const filterEventByName = (e) => {
     let query = e.target.value;
-    // Filtra los eventos por nombre
 
     setSearchInput(query);
   };
@@ -53,7 +54,6 @@ export default function MainPage() {
           searchInput={searchInput}
         />
       </div>
-
       <div className={styles.eventsContainer}>
         <Highlight_events highlightEvents={highlightEvents} />
 
