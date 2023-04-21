@@ -5,7 +5,13 @@
   gap: 55px 270px;
   justify-items: center;
   justify-content: center;
-  margin: 115px 0;
+  margin: 20px 0;
+}
+.titlePastEvents {
+  margin-top: 100px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--color1);
 }
 * {
   font-family: var(--font1);

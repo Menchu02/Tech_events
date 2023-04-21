@@ -31,7 +31,7 @@ export default function Admin() {
         filterEventByName={filterEventByName}
         searchInput={searchInput}
       />
-      <h1 className={styles.titleHighlightEvents}>Admin events</h1>
+      <h1 className={styles.titleAdminEvents}>Events</h1>
       <div className={styles.galleryContainer}>
         {admin.map((item) => (
           <EventCard item={item} key={item.id} />

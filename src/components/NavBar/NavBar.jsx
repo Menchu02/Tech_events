@@ -31,7 +31,10 @@ export default function NavBar() {
           <Link>
             <h1>About Us</h1>
           </Link>
-          <h1 className='media'>Social Media</h1>
+          <Link to={'/'}>
+            <h1>Home</h1>
+          </Link>
+
           <div className='socialmedia'>
             <Link>
               <FaFacebookSquare></FaFacebookSquare>
