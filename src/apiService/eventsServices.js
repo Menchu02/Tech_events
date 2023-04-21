@@ -20,15 +20,15 @@ const eventiaServices = {
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
-  getNotAvailable() {
+  getNotAvailable(name) {
     return axios
-      .get(url + '/notAvailable')
+      .get(url + `/notAvailable?name=${name}`)
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
-  getAvailable() {
+  getAvailable(name) {
     return axios
-      .get(url + '/available ')
+      .get(url + `/available?name=${name}`)
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
