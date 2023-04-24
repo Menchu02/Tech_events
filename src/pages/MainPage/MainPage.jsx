@@ -6,8 +6,6 @@ import Slider from '../../components/Slider/Slider';
 import UpComing_events from '../../components/UpComing_events/UpComing_events';
 import eventiaServices from '../../apiService/eventsServices';
 import styles from './main.module.css';
-import EventList from '../../components/EventList/EventList';
-import Admin from '../../components/Admin/Admin';
 
 export default function MainPage() {
   //ESTADOS EVENTOS
