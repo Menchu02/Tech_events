@@ -19,10 +19,10 @@ export default function NavBar() {
       <div className="navbar">
         <h1 className="nav_logo">EVENTIA</h1>
         <div className={`nav_items ${isOpen && "open"}`}>
-          <Link>
+          <Link to="/" onClick={() => setIsOpen(!isOpen)}>
             <h1>Active Events</h1>
           </Link>
-          <Link>
+          <Link to="/" onClick={() => setIsOpen(!isOpen)}>
             <h1>Past Events</h1>
           </Link>
           <Link>

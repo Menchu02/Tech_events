@@ -1,6 +1,6 @@
-import React from 'react';
-import EventCard from '../EventCard/EventCard';
-import styles from './upComingEvents.module.css';
+import React from "react";
+import EventCard from "../EventCard/EventCard";
+import styles from "./upComingEvents.module.css";
 
 export default function UpComing_events({ upComingEvents }) {
   return (
