@@ -36,7 +36,7 @@ In summary, the Eventia project is a comprehensive and user-friendly platform th
 
 Once everything is installed, you can clone it from the terminal:
 ```
-git clone https://github.com/ItzAle/sneakers-app.git
+git clone https://github.com/Menchu02/Tech_events.git
 ```
 Next, it is necessary to install the dependencies:
 ```
@@ -96,7 +96,7 @@ En resumen, el proyecto Eventia es una plataforma completa y fácil de usar que 
 
 Una vez que esté todo instalado, ya se puede clonar desde la terminal:
 ```
-git clone https://github.com/ItzAle/sneakers-app.git
+git clone https://github.com/Menchu02/Tech_events.git
 ```
 A continuación es necesario installar las depencias:
 ```
