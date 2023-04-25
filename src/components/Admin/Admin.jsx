@@ -3,6 +3,7 @@ import styles from './admin.module.css';
 import eventiaServices from '../../apiService/eventsServices';
 // import EventCard from '../EventCard/EventCard';
 import { Link } from 'react-router-dom';
+import { BsFillTrash3Fill } from 'react-icons/bs';
 
 // import Footer from '../Footer/Footer';
 // import SearchBar from '../SearchBar/SearchBar';
@@ -35,6 +36,14 @@ export default function Admin() {
     setFormAdmin(!formAdmin);
   };
 
+  //FUNCIÓN ELIMINAR
+
+  const deleteById = (idToDelete) => {
+    eventiaServices.deleteById(idToDelete);
+    let newData = admin.filter((item) => item.id !== idToDelete);
+    setAdmin(newData);
+  };
+
   return (
     <>
       <div className={styles.adminButtonContainer}>
@@ -46,35 +55,39 @@ export default function Admin() {
           New event
         </button>
       </div>
-      <h1 className={styles.titleAdminEvents}>Events</h1>
 
       {formAdmin ? (
-        <FormAdmin />
+        <div className={styles.formAdminContainer}>
+          <FormAdmin />
+        </div>
       ) : (
         <div className={styles.galleryContainer}>
+          <h1 className={styles.titleAdminEvents}>Events</h1>
           {admin.map((item) => (
-            <Link key={item.id} to={`/events/${item.id}`}>
-              <div className={styles.eventCardContainer}>
-                <div className={styles.imgContainer}>
-                  <img
-                    className={styles.imgCardEvent}
-                    src={item.img}
-                    alt='img event'
+            <div key={item.id} className={styles.eventCardContainer}>
+              <div className={styles.imgContainer}>
+                <img
+                  className={styles.imgCardEvent}
+                  src={item.img}
+                  alt='img event'
+                />
+              </div>
+              <div className={styles.bottomEventCard}>
+                <div className={styles.dateContainer}>
+                  <h2>{item.eventDate}</h2>
+                  <BsFillTrash3Fill
+                    onClick={() => deleteById(item.id)}
+                    className={styles.deleteIcon}
                   />
                 </div>
-                <div className={styles.bottomEventCard}>
-                  <div className={styles.dateContainer}>
-                    <h2>{item.eventDate}</h2>
-                  </div>
-                  <div className={styles.infoContainer}>
-                    <h2 className={styles.titleEvent}>{item.name}</h2>
-                    <p className={styles.locationEvent}>{item.location}</p>
-                    <p className={styles.locationEvent}>{item.eventHour}</p>
-                    <button>More</button>
-                  </div>
+                <div className={styles.infoContainer}>
+                  <h2 className={styles.titleEvent}>{item.name}</h2>
+                  <p className={styles.locationEvent}>{item.location}</p>
+                  <p className={styles.locationEvent}>{item.eventHour}</p>
+                  <button>More</button>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}

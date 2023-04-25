@@ -14,6 +14,12 @@ const eventiaServices = {
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
+  deleteById(id) {
+    return axios
+      .delete(url + `/${id}`)
+      .then((res) => res.data)
+      .catch((error) => console.log(error));
+  },
   getHighlightEvents(name) {
     return axios
       .get(url + `/highlights?name=${name}`)
