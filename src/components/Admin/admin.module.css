@@ -7,7 +7,7 @@
   justify-content: center;
   margin: 20px 0;
 }
-.titlePastEvents {
+.titleAdminEvents {
   margin-top: 100px;
   font-weight: bold;
   text-decoration: underline;
@@ -35,7 +35,7 @@
   object-fit: cover;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 
 .bottomEventCard {
@@ -68,4 +68,19 @@
 .titleEvent {
   font-weight: bold;
   font-family: var(--font1);
+}
+.adminButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+}
+.adminButton {
+  border-radius: 10px;
+  background-color: var(--color1);
+  color: whitesmoke;
+  height: 40px;
+  margin-top: 16px;
 }

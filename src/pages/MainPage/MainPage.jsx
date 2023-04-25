@@ -6,7 +6,6 @@ import Slider from '../../components/Slider/Slider';
 import UpComing_events from '../../components/UpComing_events/UpComing_events';
 import eventiaServices from '../../apiService/eventsServices';
 import styles from './main.module.css';
-import EventList from '../../components/EventList/EventList';
 
 export default function MainPage() {
   //ESTADOS EVENTOS
@@ -15,34 +14,33 @@ export default function MainPage() {
   const [pastEvents, setPastEvents] = useState([]);
 
   // Agrega un estado para almacenar los eventos filtrados
-  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
 
   //LLAMADAS
   //DESTACADOS
   useEffect(() => {
     eventiaServices
-      .getHighlightEvents()
+      .getHighlightEvents(searchInput)
       .then((data) => setHighLightEvents(data));
-  }, []);
+  }, [searchInput]);
   //NO DISPONIBLES
   useEffect(() => {
-    eventiaServices.getNotAvailable().then((data) => setPastEvents(data));
-  }, []);
+    eventiaServices
+      .getNotAvailable(searchInput)
+      .then((data) => setPastEvents(data));
+  }, [searchInput]);
   //DISPONIBLES
   useEffect(() => {
-    eventiaServices.getAvailable().then((data) => setUpComingEvents(data));
-  }, []);
+    eventiaServices
+      .getAvailable(searchInput)
+      .then((data) => setUpComingEvents(data));
+  }, [searchInput]);
 
   //FUNCIÓN FILTRO POR NOMBRE
   const filterEventByName = (e) => {
     let query = e.target.value;
-    // Filtra los eventos por nombre
-    const filtered = [
-      ...highlightEvents,
-      ...upComingEvents,
-      ...pastEvents,
-    ].filter((event) => event.name.toLowerCase().includes(query.toLowerCase()));
-    setFilteredEvents(filtered);
+
+    setSearchInput(query);
   };
 
   return (
@@ -51,24 +49,16 @@ export default function MainPage() {
       <div className={styles.searchBarContainer}>
         <SearchBar
           filterEventByName={filterEventByName}
-          filteredEvents={filteredEvents}
+          searchInput={searchInput}
         />
       </div>
-      {filteredEvents.length > 0 ? (
-        // Si hay eventos filtrados, muestra solo esos
-        <div>
-          <h2>Resultados de búsqueda:</h2>
-          <EventList filteredEvents={filteredEvents} />
-        </div>
-      ) : (
-        <div>
-          <Highlight_events highlightEvents={highlightEvents} />
+      <div className={styles.eventsContainer}>
+        <Highlight_events highlightEvents={highlightEvents} />
 
-          <UpComing_events upComingEvents={upComingEvents} />
+        <UpComing_events upComingEvents={upComingEvents} />
 
-          <Past_events pastEvents={pastEvents} />
-        </div>
-      )}
+        <Past_events pastEvents={pastEvents} />
+      </div>
     </div>
   );
 }
