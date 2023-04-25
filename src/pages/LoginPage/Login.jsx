@@ -5,6 +5,8 @@ import "./Login.css";
 import validateLoginForm from "../../components/validations/LoginFormValidation";
 import validatePass from "../../components/validations/PasswordValidation";
 import EmailValidation from "../../components/validations/EmailValidation";
+import eventiaServices from "../../apiService/eventsServices";
+
 
 function Login() {
   const userModel = {
@@ -14,23 +16,46 @@ function Login() {
 
   const [user, setUser] = useState(userModel);
   let navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    localStorage.setItem("login", JSON.stringify(user));
-    navigate("/");
-  };
-
-  const userItem = JSON.parse(localStorage.getItem("login"));
-  console.log(userItem);
-
+  
+  console.log(user);
+  
   const handleOnChange = (e) => {
+    e.persist();
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  const saveAuthUser = (authUser) => {
+    localStorage.setItem("auth", JSON.stringify(authUser));
+  }
+
+  const loginSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+        name: user.name,
+        email: user.email,
+        password: user.password,
+    };
+    eventiaServices.userLogin(data)
+        .then((res) => {
+            const authUser = {
+                token: res.token,
+                email: res.email,
+                role: res.role,
+            };
+            localStorage.setItem("auth_token", res.token);
+            localStorage.setItem("auth_email", res.email);
+            localStorage.setItem("auth_role", res.role);
+            localStorage.setItem("auth", JSON.stringify(authUser));
+            navigate("/");
+            document.location.reload();
+        })
+        .catch((err) =>
+            console.log(err)
+        )
+}
   return (
     <div id="login">
-      <form id="formLogin" name="Form" onSubmit={validateLoginForm}>
+      <form id="formLogin" name="Form" onSubmit={loginSubmit}>
         <h1 className="titleWelcome">Welcome to Eventia</h1>
 
         <div className="inputContainer">
@@ -39,7 +64,7 @@ function Login() {
             className="inputLogin"
             name="email"
             id="user-email"
-            onKeyUp={EmailValidation}
+            // onKeyUp={EmailValidation}
             onChange={handleOnChange}
           />
           <label htmlFor="labelLogin" className="labelLogin">
@@ -54,7 +79,7 @@ function Login() {
             type="password"
             className="inputLogin"
             name="password"
-            onKeyUp={validatePass}
+            // onKeyUp={validatePass}
             onChange={handleOnChange}
             maxLength="30"
           />
@@ -66,14 +91,16 @@ function Login() {
         </div>
 
         <div className="containerButons">
-          <Link to={"/"}>
-            <input
-              type="submit"
+          {/* <Link to={"/"}> */}
+            <button
+              // type="submit"
               className="submitButton"
-              value="Sign In"
-              onClick={handleSubmit}
-            />
-          </Link>
+              // value="Sign In"
+              // onClick={loginSubmit}
+            >
+              sign in
+            </button>
+          {/* </Link> */}
 
           <h5 className="registerNow">
             {" "}

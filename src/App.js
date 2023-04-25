@@ -12,12 +12,13 @@ import Register from "./pages/RegisterPage/Register";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import Error404 from "./pages/404Page/Error404";
 
-// import imgSlider from '../../img';
+
 
 function App() {
   return (
     <>
       <div className="App">
+        <Navbar/>
         <Routes>
           <Route element={<Login />} path="/login" />
           <Route element={<Register />} path="/register" />

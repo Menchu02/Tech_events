@@ -11,10 +11,12 @@ function Register() {
   const initialRegister = {
     name: "",
     email: "",
-    password: "",
+    password: ""
   };
   const [register, setRegister] = useState(initialRegister);
-  const navigate = useNavigate();
+  console.log(register);
+  const navigate = useNavigate()
+
   const onChangeInput = (e) => {
     e.persist();
     setRegister({ ...register, [e.target.name]: e.target.value });
@@ -24,10 +26,10 @@ function Register() {
     const data = {
       name: register.name,
       email: register.email,
-      password: register.password,
-    };
+      password: register.password
+    }
 
-    eventiaServices.eventRegister(data);
+    eventiaServices.userRegister(data);
     navigate("/login");
   };
 
@@ -41,7 +43,7 @@ function Register() {
             type="text"
             className="inputLogin"
             name="name"
-            id="user-email"
+            // id="user-email"
             onChange={onChangeInput}
           />
           <label htmlFor="labelLogin" className="labelLogin">
@@ -56,7 +58,7 @@ function Register() {
             className="inputLogin"
             name="email"
             id="user-email"
-            onKeyUp={EmailValidation}
+            // onKeyUp={EmailValidation}
             onChange={onChangeInput}
           />
           <label htmlFor="labelLogin" className="labelLogin">
@@ -71,7 +73,7 @@ function Register() {
             type="password"
             className="inputLogin"
             name="password"
-            onKeyUp={validatePass}
+            // onKeyUp={validatePass}
             maxLength="30"
             onChange={onChangeInput}
           />

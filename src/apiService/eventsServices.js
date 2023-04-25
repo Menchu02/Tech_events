@@ -32,11 +32,19 @@ const eventiaServices = {
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
-  eventRegister() {
+  userRegister(data) {
     return axios
-      .post(url + `/register`)
-      .then((res) => res.data)
-      .catch((error) => console.error(error));
+      .post(url + `/register`, data)
+      .then((res) => {
+      console.log('registrado', res);})
+      .catch((error) => {
+      console.log('No registrado', error);
+      });
+  },
+  userLogin(data) {
+    return axios.post(url + `/login`, data)
+      .then((res)=> res.data)
+      .catch((error) => console.log(error))
   },
 };
 export default eventiaServices;
