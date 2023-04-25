@@ -1,5 +1,5 @@
-import axios from 'axios';
-const url = 'http://localhost:8080/events';
+import axios from "axios";
+const url = "http://localhost:8080/events";
 
 const eventiaServices = {
   getAllEvents() {
@@ -11,6 +11,12 @@ const eventiaServices = {
   getEventById(id) {
     return axios
       .get(url + `/${id}`)
+      .then((res) => res.data)
+      .catch((error) => console.error(error));
+  },
+  joinEvent(id) {
+    return axios
+      .get(url + "/joinEvent")
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
