@@ -1,5 +1,5 @@
-import axios from 'axios';
-const url = 'http://localhost:8080/events';
+import axios from "axios";
+const url = "http://localhost:8080/events";
 
 const eventiaServices = {
   getAllEvents() {
@@ -16,19 +16,25 @@ const eventiaServices = {
   },
   getHighlightEvents() {
     return axios
-      .get(url + '/highlights')
+      .get(url + "/highlights")
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
   getNotAvailable() {
     return axios
-      .get(url + '/notAvailable')
+      .get(url + "/notAvailable")
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
   getAvailable() {
     return axios
-      .get(url + '/available')
+      .get(url + "/available")
+      .then((res) => res.data)
+      .catch((error) => console.error(error));
+  },
+  getJoined() {
+    return axios
+      .get(url + "/joined")
       .then((res) => res.data)
       .catch((error) => console.error(error));
   },
