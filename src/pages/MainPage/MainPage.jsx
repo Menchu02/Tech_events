@@ -8,73 +8,57 @@ import eventiaServices from '../../apiService/eventsServices';
 import styles from './main.module.css';
 
 export default function MainPage() {
-  const imgSlider = [
-    'https://cnnespanol.cnn.com/wp-content/uploads/2022/02/jardineria-consejos-principiantes.jpg?quality=100&strip=info',
-    'https://media.thebostoncalendar.com/images/q_auto,fl_lossy/v1653592932/zxjdayzo1zkmo1ewzgjf/outdoor-yoga-in-cambridge--36.jpg',
-    'https://isdicoders.com/wp-content/uploads/2022/03/daw-dam-asir-asix-o-hacer-un-coding-bootcamp-1-scaled.jpeg',
-  ];
-
   //ESTADOS EVENTOS
   const [highlightEvents, setHighLightEvents] = useState([]);
   const [upComingEvents, setUpComingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
 
+  // Agrega un estado para almacenar los eventos filtrados
+  const [searchInput, setSearchInput] = useState('');
+
   //LLAMADAS
+  //DESTACADOS
   useEffect(() => {
     eventiaServices
-      .getHighlightEvents()
+      .getHighlightEvents(searchInput)
       .then((data) => setHighLightEvents(data));
-  }, []);
-
-  useEffect(() => {
-    eventiaServices.getNotAvailable().then((data) => setPastEvents(data));
-  }, []);
-
-  useEffect(() => {
-    eventiaServices.getAvailable().then((data) => setUpComingEvents(data));
-  }, []);
-
-  //ESTADO SLIDER
-  // const [slider, setSlider] = useState([]);
-
-  // useEffect(() => {
-  //   eventiaServices.getHighlightEvents().then((data) => setSlider(data));
-  // }, []);
-
-  //estado eventos
-  const [events, setEvents] = useState([]);
-
-  //estado filtro por nombre
-  const [searchBarByName, setSearchBarByName] = useState('');
-
+  }, [searchInput]);
+  //NO DISPONIBLES
   useEffect(() => {
     eventiaServices
-      .getAllEvents(searchBarByName)
-      .then((data) => setEvents(data));
-  }, [searchBarByName]);
-  // useEffect(() => {
-  //   eventiaServices.getAllEvents().then((data) => console.log(data));
-  // }, []);
+      .getNotAvailable(searchInput)
+      .then((data) => setPastEvents(data));
+  }, [searchInput]);
+  //DISPONIBLES
+  useEffect(() => {
+    eventiaServices
+      .getAvailable(searchInput)
+      .then((data) => setUpComingEvents(data));
+  }, [searchInput]);
 
   //FUNCIÓN FILTRO POR NOMBRE
   const filterEventByName = (e) => {
-    let name = e.target.value;
-    setSearchBarByName(name);
+    let query = e.target.value;
+
+    setSearchInput(query);
   };
 
   return (
     <div>
-      {/* <Slider slider={slider} /> */}
-      <Slider images={imgSlider} />
+      <Slider highlightEvents={highlightEvents} />
       <div className={styles.searchBarContainer}>
         <SearchBar
           filterEventByName={filterEventByName}
-          searchBarByName={searchBarByName}
+          searchInput={searchInput}
         />
       </div>
-      <Highlight_events highlightEvents={highlightEvents} />
-      <UpComing_events upComingEvents={upComingEvents} />
-      <Past_events pastEvents={pastEvents} />
+      <div className={styles.eventsContainer}>
+        <Highlight_events highlightEvents={highlightEvents} />
+
+        <UpComing_events upComingEvents={upComingEvents} />
+
+        <Past_events pastEvents={pastEvents} />
+      </div>
     </div>
   );
 }

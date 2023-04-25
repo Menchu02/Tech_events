@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Slider from "../../components/Slider/Slider";
-import styles from "./EventDetail.module.css";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
-import { Link, useParams } from "react-router-dom";
-import eventiaServices from "../../apiService/eventsServices";
+import React, { useEffect, useState } from 'react';
+import Slider from '../../components/Slider/Slider';
+import styles from './EventDetail.module.css';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { Link, useParams } from 'react-router-dom';
+import eventiaServices from '../../apiService/eventsServices';
 
 function EventDetail() {
   // const img = [
@@ -22,7 +22,7 @@ function EventDetail() {
   return (
     <div>
       <div className={styles.container}>
-        <img className={styles.eventimg} src={eventDetail.img} alt="image" />
+        <img className={styles.eventimg} src={eventDetail.img} alt='image' />
         <div className={styles.text}>
           <h1 className={styles.title}>{eventDetail.name}</h1>
           <h1 className={styles.by}>By {eventDetail.organitzer}</h1>
@@ -39,7 +39,7 @@ function EventDetail() {
           <h2>{eventDetail.eventDate}</h2>
           <h3>Add To Calendar</h3>
           <button className={styles.deskJoinButton}>
-            {" "}
+            {' '}
             <BsFillPersonFill /> 0/10
           </button>
           <button className={styles.deskShareButton}>Share with friends</button>
@@ -61,6 +61,9 @@ function EventDetail() {
           </p>
           <Link>
             <h1 className={styles.links}> Add to calendar </h1>
+          </Link>
+          <Link to={'/'}>
+            <h1 className={styles.links}> Home </h1>
           </Link>
         </div>
       </div>

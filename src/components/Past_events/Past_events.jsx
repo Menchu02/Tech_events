@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import EventCard from '../EventCard/EventCard';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ export default function Past_events({ pastEvents }) {
 
   return (
     <>
-      <h1 className={styles.titleHighlightEvents}>Past events</h1>
+      <h1 className={styles.titlePastEvents}>Past events</h1>
       <div className={styles.galleryContainer}>
         {pastEvents.map((item) => (
           <Link key={item.id} to={`/events/${item.id}`}>
