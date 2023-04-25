@@ -11,7 +11,7 @@ function UserPanel() {
   const [upComingEvents, setUpComingEvents] = useState([]);
 
   useEffect(() => {
-    eventiaServices.getAvailable().then((data) => setUpComingEvents(data));
+    eventiaServices.getAllEvents().then((data) => setUpComingEvents(data));
   }, []);
   return (
     <div>
