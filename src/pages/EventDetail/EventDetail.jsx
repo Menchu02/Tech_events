@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import Slider from '../../components/Slider/Slider';
-import styles from './EventDetail.module.css';
-import { FaMapMarkerAlt } from 'react-icons/fa';
-import { BsFillPersonFill } from 'react-icons/bs';
-import { Link, useParams } from 'react-router-dom';
-import eventiaServices from '../../apiService/eventsServices';
+import React, { useEffect, useState } from "react";
+import Slider from "../../components/Slider/Slider";
+import styles from "./EventDetail.module.css";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { BsFillPersonFill } from "react-icons/bs";
+import { Link, useParams } from "react-router-dom";
+import eventiaServices from "../../apiService/eventsServices";
 
 function EventDetail() {
   // const img = [
@@ -22,50 +22,47 @@ function EventDetail() {
   return (
     <div>
       <div className={styles.container}>
-        <img className={styles.eventimg} src={eventDetail.img} alt='image' />
+        <img className={styles.eventimg} src={eventDetail.img} alt="image" />
         <div className={styles.text}>
           <h1 className={styles.title}>{eventDetail.name}</h1>
-          <h1 className={styles.by}>By {eventDetail.organitzer}</h1>
+          <h1 className={styles.by}>By {eventDetail.organizer}</h1>
           <h1 className={styles.direction}>{eventDetail.location}</h1>
-          <Link to>
-            <h1 className={styles.lookonmap}>
-              <FaMapMarkerAlt />
-              View on map
-            </h1>
-          </Link>
         </div>
         <div className={styles.deskJoin}>
           <h1>Date & Time</h1>
-          <h2>{eventDetail.eventDate}</h2>
-          <h3>Add To Calendar</h3>
+          <h2>
+            {eventDetail.eventDate} at {eventDetail.eventHour}
+          </h2>
           <button className={styles.deskJoinButton}>
-            {' '}
-            <BsFillPersonFill /> 0/10
+            {" "}
+            <BsFillPersonFill /> {eventDetail.registersCount}/
+            {eventDetail.maxParticipants}
           </button>
-          <button className={styles.deskShareButton}>Share with friends</button>
+          <button className={styles.deskShareButton}>JOIN</button>
         </div>
       </div>
       <div className={styles.containerbutton}>
         <button className={styles.joinButton}>
-          <BsFillPersonFill /> 0/10
+          <BsFillPersonFill /> {eventDetail.registersCount}/
+          {eventDetail.maxParticipants}
         </button>
       </div>
 
       <div className={styles.textContainer}>
         <h1 className={styles.titles}>Description</h1>
-        <p>{eventDetail.description}</p>
+        <p className={styles.description}>{eventDetail.description}</p>
         <div>
-          <h1 className={styles.titles}>Date & Time</h1>
-          <p>
+          <h1 className={styles.titles2}>Date & Time</h1>
+          <p className={styles.description2}>
             {eventDetail.eventDate} at {eventDetail.eventHour}
           </p>
-          <Link>
-            <h1 className={styles.links}> Add to calendar </h1>
-          </Link>
-          <Link to={'/'}>
-            <h1 className={styles.links}> Home </h1>
-          </Link>
+          <button className={styles.join2Button}>JOIN</button>
         </div>
+        {/* <img
+          className={styles.map}
+          src="https://i.imgur.com/QwZzpyu.png"
+          alt="fakemaps"
+        /> */}
       </div>
     </div>
   );
