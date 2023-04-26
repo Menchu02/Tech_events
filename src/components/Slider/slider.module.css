@@ -1,12 +1,12 @@
 .container {
   position: relative;
   width: 100vw;
-  height: 75vh;
+  /* height: 75vh; */
 }
 .sliderText {
   position: absolute;
   bottom: 30px;
-  left: 70px;
+  left: 80px;
   font-size: 30px;
   text-align: center;
   color: white;
@@ -17,13 +17,13 @@
   height: 570px !important;
   object-fit: cover;
 }
-.sliderIcon{
+.sliderIcon {
   position: absolute;
   bottom: 50px;
   color: white;
   font-size: 25px;
   background-color: rgba(212, 212, 212, 0.3);
-  padding: 5px ;
+  padding: 5px;
   border-radius: 5em;
 }
 #less {
@@ -43,9 +43,9 @@
   .sliderText {
     width: 80%;
     left: 140px;
-    font-size: 35px; 
+    font-size: 35px;
   }
-  .sliderIcon{
+  .sliderIcon {
     bottom: 170px;
     font-size: 25px;
   }
