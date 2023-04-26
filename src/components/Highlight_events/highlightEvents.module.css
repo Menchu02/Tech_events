@@ -1,15 +1,24 @@
+.titleHighlightEvents {
+  margin-top: 30px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color2);
+  text-transform: uppercase;
+  color: var(--color1);
+}
 .galleryContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 190px);
-  list-style: none;
-  gap: 55px 270px;
-  justify-items: center;
+  grid-template-columns: repeat(1, auto);
   justify-content: center;
-  margin: 20px 0;
 }
-.titleHighlightEvents {
-  margin-top: 100px;
-  font-weight: bold;
-  text-decoration: underline;
-  text-decoration-color: var(--color1);
+.pastEvents{
+  opacity: 0.5;
+}
+@media (min-width: 750px){
+  .galleryContainer {
+    grid-template-columns: repeat(4, auto);
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 20px;
+  }
 }

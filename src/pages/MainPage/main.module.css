@@ -1,9 +1,12 @@
-.searchBarContainer {
+/* .searchBarContainer {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
-}
-.galleryContainer {
+} */
+
+
+/* PARA QUE ES ESTE ESTILO? NO SE ESTA UTILIZANDO EN MAIN */
+/* .galleryContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, 190px);
   list-style: none;
@@ -11,4 +14,5 @@
   justify-items: center;
   justify-content: center;
   margin: 115px 0;
-}
+  background-color:  red !important;
+} */
