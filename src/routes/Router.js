@@ -1,11 +1,11 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import EventDetail from './pages/EventDetail/EventDetail';
-import MainPage from './pages/MainPage/MainPage';
-import Admin from './components/Admin/Admin';
+import EventDetail from '../pages/EventDetail/EventDetail';
+import MainPage from '../pages/MainPage/MainPage';
+import Admin from '../components/Admin/Admin';
 
 
-function Router() {
+const Router = () => {
   return (
     <Routes>
         <Route element={<EventDetail />} path='/events/:id' />

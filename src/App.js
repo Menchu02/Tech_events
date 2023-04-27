@@ -1,8 +1,9 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
-import { Router } from 'react-router-dom';
+// import { Router } from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
+import Router from './routes/Router';
 
 
 function App() {
