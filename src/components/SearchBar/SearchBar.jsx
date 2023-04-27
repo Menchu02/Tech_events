@@ -19,15 +19,13 @@ export default function SearchBar({ filterEventByName, searchInput }) {
         onChange={filterEventByName}
         value={searchInput}
       />
-      <select name='categories' className={styles.selectInput}>
+      <select name='categories' className={styles.searchInput} id={styles.selectInput}>
         {categories.map((item) => (
           <option key={item.id} value={item.id}>
             {item.name}
           </option>
         ))}
       </select>
-      <button className={styles.anchorInput}>Location</button>
-      <button className={styles.anchorInput}>Calendar</button>
     </div>
   );
 }

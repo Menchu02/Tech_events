@@ -46,17 +46,13 @@ export default function MainPage() {
   return (
     <div>
       <Slider highlightEvents={highlightEvents} />
-      <div className={styles.searchBarContainer}>
-        <SearchBar
-          filterEventByName={filterEventByName}
-          searchInput={searchInput}
-        />
-      </div>
+      <SearchBar
+        filterEventByName={filterEventByName}
+        searchInput={searchInput}
+      />
       <div className={styles.eventsContainer}>
         <Highlight_events highlightEvents={highlightEvents} />
-
         <UpComing_events upComingEvents={upComingEvents} />
-
         <Past_events pastEvents={pastEvents} />
       </div>
     </div>

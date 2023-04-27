@@ -26,8 +26,9 @@ export default function Slider({ highlightEvents }) {
   return (
     <div className={styles.container}>
       <FaLessThan
-        className={styles.sliderIconLess}
+        className={styles.sliderIcon}
         onClick={handlerPreviousImg}
+        id={styles.less}
       />
 
       {/* mapeo la prop images */}
@@ -35,23 +36,22 @@ export default function Slider({ highlightEvents }) {
         return (
           <div key={item.id}>
             {img === index && (
-              <>
-                <Link to={`/events/${item.id}`}>
-                  <img
-                    className={styles.imgSlider}
-                    src={item.img}
-                    alt='imagen'
-                  />
-                  <p className={styles.sliderText}>{item.name}</p>
-                </Link>
-              </>
+              <Link to={`/events/${item.id}`}>
+                <img
+                  className={styles.imgSlider}
+                  src={item.img}
+                  alt='imagen'
+                />
+                <p className={styles.sliderText}>{item.name}</p>
+              </Link>
             )}
           </div>
         );
       })}
       <FaGreaterThan
-        className={styles.sliderIconGreater}
+        className={styles.sliderIcon}
         onClick={handlerNextImg}
+        id={styles.greater}
       />
     </div>
   );
