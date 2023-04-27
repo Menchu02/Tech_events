@@ -7,4 +7,11 @@ describe('Navbar in tdd', () => {
         screen.debug()
         expect(true).toBeTruthy()
     })
+
+    describe('Hay un h1 con el nombre de la empresa Eventia'), () => {
+        test('Hay un h1 con el nombre de la empresa Eventia'), () => {
+            const titulo = screen.getByRole('heading', {name:/EVENTIA/i})
+            expect(titulo).toBeInTheDocument();
+        }
+    }
 })
