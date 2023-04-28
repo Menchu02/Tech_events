@@ -35,6 +35,12 @@ export default function NavBar() {
           <Link to={"/"}>
             <h1>User</h1>
           </Link>
+          <Link to={"/login"} onClick={() => setIsOpen(!isOpen)}>
+            <h1>Login</h1>
+          </Link>
+          <Link to={"/register"} onClick={() => setIsOpen(!isOpen)}>
+            <h1>Register</h1>
+          </Link>
 
           <div className="socialmedia">
             <Link>
