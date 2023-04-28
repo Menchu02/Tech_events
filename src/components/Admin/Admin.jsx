@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import styles from './admin.module.css';
-import eventiaServices from '../../apiService/eventsServices';
+import React, { useEffect, useState } from "react";
+import styles from "./admin.module.css";
+import eventiaServices from "../../apiService/eventsServices";
 // import EventCard from '../EventCard/EventCard';
-import { Link } from 'react-router-dom';
-import { BsFillTrash3Fill } from 'react-icons/bs';
+import { Link } from "react-router-dom";
+import { BsFillTrash3Fill } from "react-icons/bs";
 
 // import Footer from '../Footer/Footer';
 // import SearchBar from '../SearchBar/SearchBar';
 // import NavBar from '../NavBar/NavBar';
-import SearchBarAdmin from '../SearchBarAdmin/SearchBarAdmin';
-import FormAdmin from '../../pages/FormAdmin/FormAdmin';
+import SearchBarAdmin from "../SearchBarAdmin/SearchBarAdmin";
+import FormAdmin from "../../pages/FormAdmin/FormAdmin";
 
 export default function Admin() {
   const [admin, setAdmin] = useState([]);
@@ -18,7 +18,7 @@ export default function Admin() {
   const [formAdmin, setFormAdmin] = useState(false);
 
   // Agrega un estado para almacenar los eventos filtrados
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     eventiaServices.getAllEvents(searchInput).then((data) => setAdmin(data));
@@ -62,14 +62,14 @@ export default function Admin() {
         </div>
       ) : (
         <div className={styles.galleryContainer}>
-          <h1 className={styles.titleAdminEvents}>Events</h1>
+          {/* <h1 className={styles.titleAdminEvents}>Events</h1> */}
           {admin.map((item) => (
             <div key={item.id} className={styles.eventCardContainer}>
               <div className={styles.imgContainer}>
                 <img
                   className={styles.imgCardEvent}
                   src={item.img}
-                  alt='img event'
+                  alt="img event"
                 />
               </div>
               <div className={styles.bottomEventCard}>

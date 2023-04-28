@@ -3,4 +3,31 @@
   align-items: start;
   flex-direction: column;
   gap: 20px;
+  padding-top: 20px;
+}
+.input {
+  background-color: var(--color1);
+  border-radius: 15px;
+  text-align: center;
+}
+.input::placeholder {
+  color: white;
+  padding-top: 10px;
+}
+
+.button {
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  height: 40px;
+  width: 60px;
+  margin-top: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.option {
+  background-color: var(--color1);
+  color: white;
 }
